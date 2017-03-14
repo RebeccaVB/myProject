@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+<h1>Review</h1>
+<div th:each="id: ${review.id}"></div>
+<h2 th:text="title: ${review.title}"/>
+<img th:src="${review.imageURL}" style="height:250px;" />
+
+<p th:text="content: ${review.content}"></p>
+<p th:text="date: ${review.date}"></p>	
+</body>
+</html>

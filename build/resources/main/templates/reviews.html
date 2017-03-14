@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>All Reviews</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<div th:each="review: ${reviews}">
+
+<h2 th:text="${review.title}"></h2>
+<img th:src="${review.imageURL}" style="height:250px;" />
+
+<p th:text="${review.content}"></p>
+<p th:text="${review.date}"></p>	
+ <a th:href="@{http://localhost:8080/single(id=${review.id})}">View More Details</a></div>
+<script src="js/jquery.js"></script>
+
+</body>
+</html>
