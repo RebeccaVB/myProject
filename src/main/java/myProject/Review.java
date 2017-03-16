@@ -3,21 +3,21 @@ package myProject;
 public class Review {
 	long id;
 	String title;
-	String imageURL;
+	String imageUrl;
 	String content;
 	String category;
 	String date;
 
-	public Review(long id, String title, String imageURL, String content, String category, String date) {
+	public Review(long id, String title, String imageUrl, String content, String category, String date) {
 		this.id = id;
 		this.title = title;
-		this.imageURL = imageURL;
+		this.imageUrl = imageUrl;
 		this.content = content;
 		this.category = category;
 		this.date = date;
 	}
 
-	public String gettitle() {
+	public String getTitle() {
 		return title;
 	}
 
@@ -25,8 +25,8 @@ public class Review {
 		return id;
 	}
 
-	public String getImage() {
-		return imageURL;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
 	public String getContent() {
