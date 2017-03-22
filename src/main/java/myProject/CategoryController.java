@@ -15,12 +15,13 @@ public class CategoryController {
 	
     @RequestMapping("/categories")
     public String allCategories( Model model) {
-        model.addAttribute("categories", categories.findAll());
+        Iterable<Category> allCategories = categories.findAll();
+    	model.addAttribute("categoriesAt", allCategories);
         return "categories";
     }
     @RequestMapping("/category")
     public String allCategory(@RequestParam ("id") Long id, Model model) {
-        model.addAttribute("category", categories.findOne(id));
+        model.addAttribute("categoryAt", categories.findOne(id));
         return "category";
     }
    

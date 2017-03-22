@@ -3,14 +3,13 @@ package myProject;
 
 
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.data.repository.CrudRepository;
-//import org.springframework.stereotype.Component;
 
 public interface ReviewRepository extends CrudRepository <Review, Long> {
 
-	 List<Category> findById(long id);
+	 Set<Review> findAll();
 }
 	
 	//	Map<Long, Review> reviewMap = new HashMap<Long, Review>();

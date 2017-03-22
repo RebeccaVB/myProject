@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ReviewController {
 
 	@Resource
-	private ReviewRepository reviewMap;
+	private ReviewRepository reviews;
 	
     @RequestMapping("/reviews")
     public String allReviews( Model model) {
-        model.addAttribute("reviews", reviewMap.findAll());
+        model.addAttribute("reviews", reviews.findAll());
        return "reviews";
     }
     @RequestMapping("/review-view")
-    public String singleReview(@RequestParam ("id") Long id, Model model) {
-        model.addAttribute("review-view", reviewMap.findOne(id));
+    public String singleReview(@RequestParam (value = "id") Long id, Model model) {
+        model.addAttribute("review-view", reviews.findOne(id));
        return "review-view";
     }
 }

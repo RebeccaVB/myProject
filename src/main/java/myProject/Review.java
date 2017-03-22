@@ -23,8 +23,11 @@ public class Review {
 	@ManyToOne
 	private Category category;
 	
+	private Review() {
+	}
+	
 
-	public Review(long id, String title, String imageUrl, String reviewCategory, String content, Category category ) {
+	public Review(long id, String title, String imageUrl, Category category, String content) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -33,10 +36,6 @@ public class Review {
 		this.content = content;
 		}
 	
-	@Override
-	public String toString() {
-		return String.format("Review[id=%d, title='%s', category='%s']", id, title, category);
-		}
 
 	public long getId() {
 		return id;
@@ -57,7 +56,5 @@ public class Review {
 	public String getContent() {
 		return content;
 	}
-	
-	
-	
+
 }
