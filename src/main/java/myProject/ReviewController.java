@@ -16,11 +16,11 @@ public class ReviewController {
     @RequestMapping("/reviews")
     public String allReviews( Model model) {
         model.addAttribute("reviews", reviewMap.findAll());
-        return "reviews";
+       return "reviews";
     }
-    @RequestMapping("/review{id}")
+    @RequestMapping("/review-view")
     public String singleReview(@RequestParam ("id") Long id, Model model) {
-        model.addAttribute("review", reviewMap.findOne(id));
-        return "review";
+        model.addAttribute("review-view", reviewMap.findOne(id));
+       return "review-view";
     }
 }
