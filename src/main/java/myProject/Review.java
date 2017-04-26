@@ -17,8 +17,6 @@ public class Review {
 	String title;
 	String imageUrl;
 	String content;
-	String author;
-	Date date;
 	
 	@ManyToOne
 	private Category category;

@@ -9,12 +9,16 @@
 
 <body>
 	<h1>Review</h1>
-	<div th:text=" ${review.id}">
-		<!--<h2 th:text="${review.title}"/> -->
-		<img th:src="${review.imageUrl}" style="height:250px;" />
-
-		<p th:text="content: ${review.content}"></p>
-		<p th:text="date: ${review.date}"></p>
+	<div class="container">
+		<div class="col-sm-6 col-md-4">
+			<ul>
+				<li th:text=" ${review.id}"></li>
+				<li th:text="${review.title}"> </li>
+				<li th:text="${review.category}"> </li>
+				<li th:text="content: ${review.content}"></li>
+				<img th:src="${review.image_url}" style="height:250px;" />
+				<!-- <p th:text="date: ${review.date}"></p> -->
+		</div>
 	</div>
 	<script src="js/jquery.js"></script>
 

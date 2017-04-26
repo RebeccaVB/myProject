@@ -2,27 +2,25 @@ package myProject;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class CategoryController {
-	
+
 	@Resource
-	private CategoryRepository categories;
+	private CategoryRepository repository;
+
+	@RequestMapping("/categories")
+	public Iterable<Category> showCategories() {
+		return repository.findAll();
+	}
 	
-    @RequestMapping("/categories")
-    public String allCategories( Model model) {
-        Iterable<Category> allCategories = categories.findAll();
-    	model.addAttribute("categoriesAt", allCategories);
-        return "categories";
-    }
-    @RequestMapping("/category")
-    public String allCategory(@RequestParam ("id") Long id, Model model) {
-        model.addAttribute("categoryAt", categories.findOne(id));
-        return "category";
-    }
-   
+
+	@RequestMapping("/category")
+	public Category showCategory(@PathVariable Long id) {
+		return repository.findOne(id);
+	}
+
 }

@@ -2,20 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 
 <body>
-	<h1>Categories of Reviews</h1>
-	<div th:each="category ${categories}">
-		<!--<h2 th:text="${review.title}"/> -->
-		<p th:text="${category.review}"/>
-		<p th:text="${category.name}" />
-		<p th:text="${category.category_id}/>
-	</div>
-	<script src="js/jquery.js"></script>
+    <h1>Categories of Reviews</h1>
+    <p id="each" th:each="category: ${categoryAt.review-view}"><a th:text="${category.name}" th:href="@{/review-view(id=${review-view.id})}" /></p>
+    <!--<h2 th:text="${review.title}"/> -->
+
+
+    <script src="js/jquery.js"></script>
 
 </body>
 

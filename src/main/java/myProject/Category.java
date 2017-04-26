@@ -1,7 +1,6 @@
 package myProject;
 
 import java.util.Collection;
-import java.util.Collections;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,14 +23,10 @@ public class Category {
 	}
 
 	public Category(long id, String name) {
-		this(id, name, Collections.emptyList());
+		this(id, name);
 	}
 
-	public Category(long id, String name, Collection<Review> reviews) {
-		this.id = id;
-		this.name = name;
-		this.reviews = reviews;
-	}
+	
 
 	public Collection<Review> getReviews() {
 		return reviews;

@@ -4,17 +4,27 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 
 </head>
 
 <body>
-	<h1>Categories of Reviews</h1>
-	<p id="each" th:each="categories ${categoriesAt}"><a th:text="${categories.name}" th:href="@{/Category(id=${catogory.id})}"/></p>
-		<!--<h2 th:text="${review.title}"/> -->
-		<p th:text="${category.name}" />
+	<h1>Categories of the Reviews</h1>
+	<div id="row" th:each="categories: ${categories}">
+		<div class="col-sm-6 col-md-8 col-xs-6">
 
-	<script src="js/jquery.js"></script>
+			<p th:text="${categories.id}"></p>
+			<p id="categoryName"></p>
+			<a th:href="@{/review-view}">View More Information</a>
+		</div>
+	</div>
+	<!--<h2 th:text="${review.title}"/> -->
+	<!--<p th:text="${categoryAt.name}" />-->
 
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/reviews.js"></script>
 </body>
 
 </html>

@@ -8,14 +8,12 @@
 </head>
 
 <body>
-	<h1>Review</h1>
-	<div th:text=" ${review.id}">
-		<!--<h2 th:text="${review.title}"/> -->
-		<img th:src="${review.image_url}" style="height:250px;" />
+	<h1>Categories of Reviews</h1>
+	<p id="each" th:each="categories: ${categories}">
+		<a th:text="${categories.name}" th:href="@{http://localhost:8080/category(id=${category.id})}"></a></p>
+	<!--<h2 th:text="${review.title}"/> -->
+<!--<p th:text="${categoryAt.name}" />-->
 
-		<p th:text="content: ${review.content}"></p>
-		<p th:text="date: ${review.date}"></p>
-	</div>
 	<script src="js/jquery.js"></script>
 
 </body>
